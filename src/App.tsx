@@ -1,15 +1,15 @@
 import './App.css'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 
-import { ChatList } from './ChatList/components'
+import { MainLayout } from './MainLayout/MainLayout'
+import { ThemeProvider } from './contexts/ThemeContexts'
 
 export const App = (): JSX.Element => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<ChatList />} />
-        {/*<Route path='/chat/:id' element={<ChatList />} />*/}
-      </Routes>
-    </BrowserRouter>
+    <ThemeProvider>
+      <BrowserRouter>
+        <MainLayout />
+      </BrowserRouter>
+    </ThemeProvider>
   )
 }
